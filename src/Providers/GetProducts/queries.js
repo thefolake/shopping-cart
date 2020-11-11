@@ -11,16 +11,6 @@ export const GET_PRODUCTS = gql`
   }
 `;
 
-// export const GET_PRODUCTS = gql`
-//   query {
-//       products {
-//          id
-//          title
-//          image_url
-//       }
-//   }
-// `;
-
 export const CURRENCY = gql`
     query {
         currency

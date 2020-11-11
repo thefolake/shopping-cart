@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from '@apollo/client';
 import { CURRENCY, GET_PRODUCTS } from "./queries";
 
@@ -81,8 +81,6 @@ const useGetProducts = () => {
 
     const updateCurrency = (selectedCurrency) => {
         setCurrency(selectedCurrency.target.value);
-
-        console.log(selectedCurrency.target)
     };
 
     let total = cartItems.reduce((acc, {price, count}) => acc + (price*count), 0);
@@ -92,7 +90,21 @@ const useGetProducts = () => {
     const { data, loading, error } = useQuery(GET_PRODUCTS,{
         variables: { currency: currency },
 
+        onCompleted: ({products}) => {
+
+            if (products && cartItems.length > 0)  {
+
+                const newCartItems = cartItems?.map(({id, price, ...rest}) => ({
+                        ...rest,
+                        id,
+                        price: products?.find(product => product?.id === id)?.price || price
+                    })
+                );
+                setCartItems(newCartItems)
+            }
+        }
     });
+
 
     if (error || currencyError) return <p>Error :(</p>;
 
