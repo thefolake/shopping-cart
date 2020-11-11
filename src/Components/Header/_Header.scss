@@ -1,0 +1,48 @@
+
+.header {
+  align-items: center;
+  background: #f5f5f4;
+  box-shadow: 0 2px 3px -3px grey;
+  display: flex;
+  max-width: 100%;
+  padding: 6px 40px;
+  position: sticky;
+  top: 0;
+
+  .logo {
+    float: left;
+  }
+  
+  &-navs {
+    font-size: 14px;
+    margin: 0 0 0 50px;
+
+    a{
+      border-bottom: 3px solid transparent;
+      color: #000;
+      box-sizing: border-box;
+      font-size: 16px;
+      line-height: 21px;
+      letter-spacing: 0.1px;
+      margin-left: 42px;
+      margin-top: 23px;
+      padding-bottom: 23px;
+      text-decoration: none;
+
+      &.active,
+      &:hover{
+        color: #3d5b57;
+      }
+    }
+  }
+
+  .cart-img {
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  .cart-no {
+    font-size: 11px;
+    vertical-align: top;
+  }
+}

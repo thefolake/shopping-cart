@@ -1,0 +1,49 @@
+.container {
+  .filter-section {
+    display: flex;
+    padding: 90px 40px 80px 40px;
+
+    &__products, &__filter {
+      flex: 1;
+
+      h1 {
+        font-size: 44px;
+        font-weight: normal;
+        line-height: 20px;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 20px;
+        margin-top: 30px;
+      }
+    }
+
+    &__filter {
+      text-align: end;
+
+      select {
+        appearance: none;
+        background: white url("Components/Icons/Caret-Down.svg") center right 20px no-repeat;
+        border-color: #cdd1ce;
+        color: #2b2e2b;
+        outline: none;
+        padding: 20px 140px;
+
+        &:focus {
+          border-color: #4b5548;
+          outline: #4b5548;
+        }
+      }
+    }
+  }
+
+  .grid {
+    background: #e2e6e2;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding-top: 40px;
+  };
+}

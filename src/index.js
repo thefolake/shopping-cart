@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ApolloRequestClient from "./Lib/ApolloRequestClient";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ApolloRequestClient>
+        <App />
+    </ApolloRequestClient>,
   document.getElementById('root')
 );
 
